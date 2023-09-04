@@ -1,6 +1,6 @@
-﻿using ApiTemplate.API.Contracts;
-using ApiTemplate.DAL.Data;
-using ApiTemplate.DAL.Models;
+﻿using TextualRPG.API.Contracts;
+using TextualRPG.DAL.Data;
+using TextualRPG.DAL.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiTemplate.EF.Services
+namespace TextualRPG.EF.Services
 {
     public class CharacterService : ICharacterService
     {

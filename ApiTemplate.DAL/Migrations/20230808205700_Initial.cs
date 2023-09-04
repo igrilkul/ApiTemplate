@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace ApiTemplate.DAL.Migrations
+namespace TextualRPG.DAL.Migrations
 {
     /// <inheritdoc />
     public partial class Initial : Migration

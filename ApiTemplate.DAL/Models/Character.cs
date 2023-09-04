@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiTemplate.DAL.Models
+namespace TextualRPG.DAL.Models
 {
     public class Character
     {

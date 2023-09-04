@@ -1,4 +1,4 @@
-﻿using ApiTemplate.DAL.Models;
+﻿using TextualRPG.DAL.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiTemplate.DAL.Data.EntityConfigurations
+namespace TextualRPG.DAL.Data.EntityConfigurations
 {
     public class CharacterEntityTypeConfiguration : IEntityTypeConfiguration<Character>
     {

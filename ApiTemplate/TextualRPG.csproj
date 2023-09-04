@@ -4,7 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>aspnet-ApiTemplate-9379e401-d116-4a53-87d0-ec422e4931fb</UserSecretsId>
+    <UserSecretsId>aspnet-TextualRPG-9379e401-d116-4a53-87d0-ec422e4931fb</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -33,10 +33,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ApiTemplate.API.Contracts\ApiTemplate.API.Contracts.csproj" />
-    <ProjectReference Include="..\ApiTemplate.API\ApiTemplate.API.csproj" />
-    <ProjectReference Include="..\ApiTemplate.DAL\ApiTemplate.DAL.csproj" />
-    <ProjectReference Include="..\ApiTemplate.EF.Services\ApiTemplate.EF.Services.csproj" />
+    <ProjectReference Include="..\ApiTemplate.API.Contracts\TextualRPG.API.Contracts.csproj" />
+    <ProjectReference Include="..\ApiTemplate.API\TextualRPG.API.csproj" />
+    <ProjectReference Include="..\ApiTemplate.DAL\TextualRPG.DAL.csproj" />
+    <ProjectReference Include="..\ApiTemplate.EF.Services\TextualRPG.EF.Services.csproj" />
   </ItemGroup>
 
 </Project>

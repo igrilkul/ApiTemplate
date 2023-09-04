@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ApiTemplate.EF.Services\ApiTemplate.EF.Services.csproj" />
+    <ProjectReference Include="..\ApiTemplate.EF.Services\TextualRPG.EF.Services.csproj" />
   </ItemGroup>
 
 </Project>

@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "ApiTemplate": {
+    "TextualRPG": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

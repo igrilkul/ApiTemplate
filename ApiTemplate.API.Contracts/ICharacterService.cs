@@ -1,11 +1,11 @@
-﻿using ApiTemplate.DAL.Models;
+﻿using TextualRPG.DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiTemplate.API.Contracts
+namespace TextualRPG.API.Contracts
 {
     public interface ICharacterService
     {

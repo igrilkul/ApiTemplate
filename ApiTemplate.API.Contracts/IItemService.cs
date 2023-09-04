@@ -1,6 +1,6 @@
-﻿using ApiTemplate.DAL.Models;
+﻿using TextualRPG.DAL.Models;
 
-namespace ApiTemplate.API.Contracts
+namespace TextualRPG.API.Contracts
 {
     public interface IItemService
     {

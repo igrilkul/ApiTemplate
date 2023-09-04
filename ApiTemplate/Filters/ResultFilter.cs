@@ -1,8 +1,8 @@
-﻿using ApiTemplate.DAL.DTOs;
+﻿using TextualRPG.DAL.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace ApiTemplate.Filters
+namespace TextualRPG.Filters
 {
     public class ResultFilter : IAsyncResultFilter
     {

@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ApiTemplate.DAL\ApiTemplate.DAL.csproj" />
+    <ProjectReference Include="..\ApiTemplate.DAL\TextualRPG.DAL.csproj" />
   </ItemGroup>
 
 </Project>

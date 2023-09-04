@@ -1,6 +1,6 @@
-﻿using ApiTemplate.API.Contracts;
-using ApiTemplate.DAL.Models;
-using ApiTemplate.EF.Services;
+﻿using TextualRPG.API.Contracts;
+using TextualRPG.DAL.Models;
+using TextualRPG.EF.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiTemplate.API
+namespace TextualRPG.API
 {
     [ApiController]
     [Route("api/[controller]")]
@@ -59,7 +59,7 @@ namespace ApiTemplate.API
             return Ok(character);
         }
 
-        [HttpPut("{id}")]
+        [HttpPatch("{id}")]
         public async Task<ActionResult<Character>> LevelUpCharacter(int id, int levels)
         {
             var character = await service.LevelUpCharacterAsync(id, levels);

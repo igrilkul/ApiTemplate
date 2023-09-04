@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace ApiTemplate.TransformerConventions
+namespace TextualRPG.TransformerConventions
 {
     public class SlugifyParameterTransformer : IOutboundParameterTransformer
     {

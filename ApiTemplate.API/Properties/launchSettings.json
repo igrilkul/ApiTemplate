@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "ApiTemplate.API": {
+    "TextualRPG.API": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

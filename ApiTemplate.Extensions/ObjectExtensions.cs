@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace ApiTemplate.Extensions
+namespace TextualRPG.Extensions
 {
     public static class ObjectExtensions
     {

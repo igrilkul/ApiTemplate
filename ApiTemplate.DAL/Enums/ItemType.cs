@@ -1,4 +1,4 @@
-﻿namespace ApiTemplate.DAL.Enums
+﻿namespace TextualRPG.DAL.Enums
 {
     public enum ItemType
     {

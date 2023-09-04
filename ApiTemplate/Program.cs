@@ -1,16 +1,16 @@
-using ApiTemplate.API.Contracts;
-using ApiTemplate.DAL.Data;
-using ApiTemplate.EF.Services;
-using ApiTemplate.Filters;
-using ApiTemplate.SwaggerFilters;
-using ApiTemplate.TransformerConventions;
+using TextualRPG.API.Contracts;
+using TextualRPG.DAL.Data;
+using TextualRPG.EF.Services;
+using TextualRPG.Filters;
+using TextualRPG.SwaggerFilters;
+using TextualRPG.TransformerConventions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Web;
 using Newtonsoft.Json.Converters;
 
-namespace ApiTemplate
+namespace TextualRPG
 {
     public class Program
     {

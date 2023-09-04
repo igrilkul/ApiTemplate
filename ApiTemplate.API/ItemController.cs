@@ -1,9 +1,9 @@
-﻿using ApiTemplate.API.Contracts;
-using ApiTemplate.DAL.Models;
-using ApiTemplate.EF.Services;
+﻿using TextualRPG.API.Contracts;
+using TextualRPG.DAL.Models;
+using TextualRPG.EF.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ApiTemplate.API
+namespace TextualRPG.API
 {
     [ApiController]
     [Route("api/[controller]")]

@@ -1,8 +1,8 @@
-﻿using ApiTemplate.DAL.Data.EntityConfigurations;
-using ApiTemplate.DAL.Models;
+﻿using TextualRPG.DAL.Data.EntityConfigurations;
+using TextualRPG.DAL.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace ApiTemplate.DAL.Data
+namespace TextualRPG.DAL.Data
 {
     public class DataContext : DbContext
     {

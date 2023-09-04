@@ -1,4 +1,4 @@
-﻿namespace ApiTemplate.DAL.DTOs
+﻿namespace TextualRPG.DAL.DTOs
 {
     public class BaseDto<T>
     {

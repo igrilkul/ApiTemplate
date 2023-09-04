@@ -1,6 +1,6 @@
-﻿using ApiTemplate.DAL.Enums;
+﻿using TextualRPG.DAL.Enums;
 
-namespace ApiTemplate.DAL.Models
+namespace TextualRPG.DAL.Models
 {
     public class Item
     {

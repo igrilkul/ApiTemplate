@@ -1,8 +1,8 @@
-﻿using ApiTemplate.DAL.Models;
+﻿using TextualRPG.DAL.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace ApiTemplate.DAL.Data.EntityConfigurations
+namespace TextualRPG.DAL.Data.EntityConfigurations
 {
     public class ItemEntityTypeConfiguration : IEntityTypeConfiguration<Item>
     {

@@ -2,7 +2,7 @@
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace ApiTemplate.SwaggerFilters
+namespace TextualRPG.SwaggerFilters
 {
     public class EnumSchemaFilter : ISchemaFilter
     {

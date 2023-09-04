@@ -3,17 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiTemplate", "ApiTemplate\ApiTemplate.csproj", "{DDDAB7B0-3EC9-4F87-8B73-D9DD98B975E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextualRPG", "ApiTemplate\TextualRPG.csproj", "{DDDAB7B0-3EC9-4F87-8B73-D9DD98B975E6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{14F5C54E-180E-4E0B-BF7E-06803758CEAA} = {14F5C54E-180E-4E0B-BF7E-06803758CEAA}
+		{4AFA96CC-C6DF-4110-8246-7A786BA7A134} = {4AFA96CC-C6DF-4110-8246-7A786BA7A134}
+		{AE5E54FA-D9DE-47E8-9A5A-E1406B02C72A} = {AE5E54FA-D9DE-47E8-9A5A-E1406B02C72A}
+		{D8D8805D-1A53-44EC-8D5C-98AE35014C48} = {D8D8805D-1A53-44EC-8D5C-98AE35014C48}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiTemplate.Extensions", "ApiTemplate.Extensions\ApiTemplate.Extensions.csproj", "{08495A45-C81F-4233-B732-34832EC614A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextualRPG.Extensions", "ApiTemplate.Extensions\TextualRPG.Extensions.csproj", "{08495A45-C81F-4233-B732-34832EC614A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiTemplate.API.Contracts", "ApiTemplate.API.Contracts\ApiTemplate.API.Contracts.csproj", "{D8D8805D-1A53-44EC-8D5C-98AE35014C48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextualRPG.API.Contracts", "ApiTemplate.API.Contracts\TextualRPG.API.Contracts.csproj", "{D8D8805D-1A53-44EC-8D5C-98AE35014C48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiTemplate.DAL", "ApiTemplate.DAL\ApiTemplate.DAL.csproj", "{AE5E54FA-D9DE-47E8-9A5A-E1406B02C72A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextualRPG.DAL", "ApiTemplate.DAL\TextualRPG.DAL.csproj", "{AE5E54FA-D9DE-47E8-9A5A-E1406B02C72A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiTemplate.EF.Services", "ApiTemplate.EF.Services\ApiTemplate.EF.Services.csproj", "{14F5C54E-180E-4E0B-BF7E-06803758CEAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextualRPG.EF.Services", "ApiTemplate.EF.Services\TextualRPG.EF.Services.csproj", "{14F5C54E-180E-4E0B-BF7E-06803758CEAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiTemplate.API", "ApiTemplate.API\ApiTemplate.API.csproj", "{4AFA96CC-C6DF-4110-8246-7A786BA7A134}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextualRPG.API", "ApiTemplate.API\TextualRPG.API.csproj", "{4AFA96CC-C6DF-4110-8246-7A786BA7A134}"
+	ProjectSection(ProjectDependencies) = postProject
+		{14F5C54E-180E-4E0B-BF7E-06803758CEAA} = {14F5C54E-180E-4E0B-BF7E-06803758CEAA}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
