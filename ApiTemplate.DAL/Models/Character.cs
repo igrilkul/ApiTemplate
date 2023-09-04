@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TextualRPG.DAL.Enums;
 
 namespace TextualRPG.DAL.Models
 {
@@ -11,22 +12,21 @@ namespace TextualRPG.DAL.Models
         public int Id { get; private set; }
         public string Name { get; private set; } = string.Empty;
         public int Level { get; private set; } = 0;
-        public string ClassName { get; private set; } = string.Empty;
+        public ClassType ClassName { get; private set; } = 0;
 
         public string FullText => $"Lv{Level} {Name}";
 
         // not mapped
         private Character() { }
 
-        public Character(int id, string name, int level, string className)
+        public Character( string name, int level, ClassType className)
         {
-            Id = id;
             Name = name;
             Level = level;
             ClassName = className;
         }
 
-        public void UpdateCharacter(string name, int level, string className)
+        public void UpdateCharacter(string name, int level, ClassType className)
         {
             Name = name;
             Level = level;
