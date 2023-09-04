@@ -14,6 +14,10 @@ namespace TextualRPG.DAL.Models
 
         public ItemType Type { get; private set; }
 
+        //Relations
+        private readonly List<Character> characters = new();
+        public IReadOnlyCollection<Character> Characters => characters.AsReadOnly();
+
 
         // not mapped
         public string FullText => $"{Title} - {Description}";

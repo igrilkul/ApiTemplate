@@ -15,6 +15,8 @@ namespace TextualRPG.DAL.Data.EntityConfigurations
             itemBuilder.Property(item => item.Description).HasMaxLength(150).IsRequired();
             itemBuilder.Property(item => item.Price).IsRequired();
             itemBuilder.Property(item => item.Type).HasMaxLength(30).IsRequired().HasConversion<string>();
+
+            itemBuilder.HasMany(i => i.Characters).WithMany(c => c.Items).UsingEntity<CharacterItem>();
         }
     }
 }

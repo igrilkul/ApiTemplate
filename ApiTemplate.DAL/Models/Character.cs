@@ -14,9 +14,18 @@ namespace TextualRPG.DAL.Models
         public int Level { get; private set; } = 0;
         public ClassType ClassName { get; private set; } = 0;
 
-        public string FullText => $"Lv{Level} {Name}";
+        //Relations
+        private readonly List<Item> items = new();
+        public IReadOnlyCollection<Item> Items => items.AsReadOnly();
+
+        private readonly List<CharacterItem> characterItems = new();
+        public IReadOnlyCollection<CharacterItem> CharacterItems => characterItems.AsReadOnly();
+
 
         // not mapped
+        public string FullText => $"Lv{Level} {Name}";
+
+
         private Character() { }
 
         public Character( string name, int level, ClassType className)

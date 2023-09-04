@@ -19,6 +19,10 @@ namespace TextualRPG.DAL.Data.EntityConfigurations
             characterBuilder.Property(c => c.Name).HasMaxLength(50).IsRequired();
             characterBuilder.Property(c=>c.ClassName).HasMaxLength(50).IsRequired();
             characterBuilder.Property(c=>c.Level).IsRequired();
+            characterBuilder.Ignore(nameof(Character.FullText));
+
+            characterBuilder.HasMany(c => c.Items).WithMany(i => i.Characters).UsingEntity<CharacterItem>();
+            characterBuilder.HasMany(c => c.CharacterItems).WithOne(ci => ci.Character);
         }
     }
 }
