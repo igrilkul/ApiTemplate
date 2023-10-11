@@ -15,5 +15,7 @@ namespace TextualRPG.API.Contracts
         public Task<Character?> UpdateCharacterAsync(int id, Character request);
         public Task<Character?> RemoveCharacterAsync(int id);
         public Task<Character?> LevelUpCharacterAsync(int id, int levels);
+        public Task<Character?> RepairItemAsync(int characterId, int itemId);
+        public Task<Character?> EnhanceItemAsync(int characterId, int itemId);
     }
 }

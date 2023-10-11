@@ -2,11 +2,6 @@
 using TextualRPG.DAL.Models;
 using TextualRPG.EF.Services;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TextualRPG.API
 {
@@ -34,7 +29,7 @@ namespace TextualRPG.API
 
             if(character == null)
             {
-                return BadRequest("Character not found.");
+                return NotFound("Character not found.");
             }
 
             return Ok(character);
@@ -51,9 +46,9 @@ namespace TextualRPG.API
         {
             var character = await service.UpdateCharacterAsync(id, characterRequest);
 
-            if(character == null)
+            if(character is null)
             {
-                return BadRequest("Character not found.");
+                return NotFound("Character not found.");
             }
 
             return Ok(character);
@@ -79,7 +74,7 @@ namespace TextualRPG.API
 
             if (character == null)
             {
-                return BadRequest("Character not found.");
+                return NotFound("Character not found.");
             }
              
             return NoContent();

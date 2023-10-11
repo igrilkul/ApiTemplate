@@ -67,7 +67,7 @@ namespace TextualRPG.EF.Services
 
         public async Task<Character?> UpdateCharacterAsync(int id, Character characterToUpdate)
         {
-            Character? dbCharacter = await context.Characters.FindAsync(id);
+            Character? dbCharacter = await GetCharacterByIdAsync(id);
 
             if (dbCharacter is null)
             {
@@ -79,6 +79,49 @@ namespace TextualRPG.EF.Services
             await context.SaveChangesAsync();
 
             return dbCharacter;
+        }
+
+        public async Task<Character?> RepairItemAsync(int characterId, int itemId)
+        {
+            //ToDo: check item type, figure out a way to await charItem and if it is necessary or not to await it
+            var character = await this.context.Characters
+            .Include(c => c.CharacterItems)
+            .ThenInclude(ci => ci.Item)
+            .FirstOrDefaultAsync(c => c.Id == characterId);
+
+            var charItem = character?.CharacterItems.FirstOrDefault(c => c.Item?.Id == itemId);
+
+            charItem?.RepairItem(charItem);
+            this.context.SaveChanges();
+
+            if(character is null)
+            {
+                return null;
+            }
+
+            return character;
+
+        }
+
+        public async Task<Character?> EnhanceItemAsync(int characterId, int itemId)
+        {
+            //ToDo: check item type, figure out a way to await charItem and if it is necessary or not to await it
+            var character = await this.context.Characters
+            .Include(c => c.CharacterItems)
+            .ThenInclude(ci => ci.Item)
+            .FirstOrDefaultAsync(c => c.Id == characterId);
+
+            var charItem = character?.CharacterItems.FirstOrDefault(c => c.Item?.Id == itemId);
+
+            charItem?.EnhanceItem(charItem);
+            this.context.SaveChanges();
+
+            if (character is null)
+            {
+                return null;
+            }
+
+            return character;
         }
     }
 }
