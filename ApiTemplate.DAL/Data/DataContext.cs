@@ -10,6 +10,7 @@ namespace TextualRPG.DAL.Data
 
         public DbSet<Item> Items => Set<Item>();
         public DbSet<Character> Characters => Set<Character>();
+        public DbSet<Zone> Zones => Set<Zone>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -17,6 +18,7 @@ namespace TextualRPG.DAL.Data
 
             modelBuilder.ApplyConfiguration(new ItemEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new CharacterEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new ZoneEntityTypeConfiguration());
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
