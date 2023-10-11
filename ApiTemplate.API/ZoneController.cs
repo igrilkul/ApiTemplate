@@ -46,7 +46,7 @@ namespace TextualRPG.API
             var zone = await service.UpdateZoneAsync(id, zoneRequest);
             if(zone is null)
             {
-                return NotFound("Zone not found.")
+                return NotFound("Zone not found.");
             }
 
             return Ok(zone);
