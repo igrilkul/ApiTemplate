@@ -20,19 +20,20 @@ namespace TextualRPG.EF.Services
 
         public async Task<Character> AddCharacterAsync(Character characterToAdd)
         {
-            await context.Characters.AddAsync(characterToAdd);
-            await context.SaveChangesAsync();
+            await this.context.Characters.AddAsync(characterToAdd);
+            await this.context.SaveChangesAsync();
             return characterToAdd;
         }
 
         public async Task<List<Character>> GetAllCharactersAsync()
         {
-            return new List<Character>(await context.Characters.ToListAsync());
+            var characters = await this.context.Characters.ToListAsync();
+            return characters;
         }
 
         public async Task<Character?> GetCharacterByIdAsync(int id)
         {
-            return await context.Characters.FindAsync(id);
+            return await this.context.Characters.FindAsync(id);
         }
 
         public async Task<Character?> LevelUpCharacterAsync(int id, int levels)
@@ -46,7 +47,7 @@ namespace TextualRPG.EF.Services
 
             dbCharacter.LevelUpCharacter(id, levels);
 
-            await context.SaveChangesAsync();
+            await this.context.SaveChangesAsync();
 
             return dbCharacter;
         }
@@ -60,8 +61,8 @@ namespace TextualRPG.EF.Services
                 return null;
             }
 
-            context.Characters.Remove(dbCharacter);
-            await context.SaveChangesAsync();
+            this.context.Characters.Remove(dbCharacter);
+            await this.context.SaveChangesAsync();
             return dbCharacter;
         }
 
@@ -76,7 +77,7 @@ namespace TextualRPG.EF.Services
 
             dbCharacter.UpdateCharacter(characterToUpdate.Name, characterToUpdate.Level, characterToUpdate.ClassName);
 
-            await context.SaveChangesAsync();
+            await this.context.SaveChangesAsync();
 
             return dbCharacter;
         }
@@ -84,42 +85,35 @@ namespace TextualRPG.EF.Services
         public async Task<Character?> RepairItemAsync(int characterId, int itemId)
         {
             //ToDo: check item type, figure out a way to await charItem and if it is necessary or not to await it
-            var character = await this.context.Characters
+            var character = context.Characters
             .Include(c => c.CharacterItems)
-            .ThenInclude(ci => ci.Item)
-            .FirstOrDefaultAsync(c => c.Id == characterId);
-
-            var charItem = character?.CharacterItems.FirstOrDefault(c => c.Item?.Id == itemId);
-
-            charItem?.RepairItem(charItem);
-            this.context.SaveChanges();
-
-            if(character is null)
-            {
-                return null;
-            }
-
-            return character;
-
-        }
-
-        public async Task<Character?> EnhanceItemAsync(int characterId, int itemId)
-        {
-            //ToDo: check item type, figure out a way to await charItem and if it is necessary or not to await it
-            var character = await this.context.Characters
-            .Include(c => c.CharacterItems)
-            .ThenInclude(ci => ci.Item)
-            .FirstOrDefaultAsync(c => c.Id == characterId);
-
-            var charItem = character?.CharacterItems.FirstOrDefault(c => c.Item?.Id == itemId);
-
-            charItem?.EnhanceItem(charItem);
-            this.context.SaveChanges();
+            .FirstOrDefault(c => c.Id == characterId);
 
             if (character is null)
             {
                 return null;
             }
+
+            character.CharacterItems.First(ci => ci.Item?.Id == itemId).RepairItem();
+            await context.SaveChangesAsync();
+
+            return character;
+        }
+
+        public async Task<Character?> EnhanceItemAsync(int characterId, int itemId)
+        {
+            //ToDo: check item type, figure out a way to await charItem and if it is necessary or not to await it
+            var character = context.Characters
+            .Include(c => c.CharacterItems)
+            .FirstOrDefault(c => c.Id == characterId);
+
+            if (character is null)
+            {
+                return null;
+            }
+
+            character.CharacterItems.First(ci => ci.Item?.Id == itemId).EnhanceItem();
+            await context.SaveChangesAsync();
 
             return character;
         }

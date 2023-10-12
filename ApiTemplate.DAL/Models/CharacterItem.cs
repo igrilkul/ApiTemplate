@@ -16,13 +16,13 @@ namespace TextualRPG.DAL.Models
         public int SaleValue { get; private set; }
         public int CurrentDurability { get; private set; }
 
-        public void RepairItem(CharacterItem item)
+        public void RepairItem()
         {
-            item.CurrentDurability = 100;
+            CurrentDurability = 100;
         }
-        public void EnhanceItem (CharacterItem item)
+        public void EnhanceItem ()
         {
-            item.EnhancementLevel += 1;
+            EnhancementLevel += 1;
         }
 
     }
