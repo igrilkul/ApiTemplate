@@ -16,6 +16,8 @@ namespace TextualRPG.DAL.Data.EntityConfigurations
             zoneBuilder.Property(zone => zone.RequiredLevel).HasDefaultValue(0).IsRequired();
             zoneBuilder.Property(zone => zone.Description);
 
+            zoneBuilder.HasMany(z => z.Enemies).WithOne(e => e.Zone);
+
         }
     }
 }

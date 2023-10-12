@@ -13,6 +13,11 @@ namespace TextualRPG.DAL.Models
         public int RequiredLevel { get; private set; } = 0;
         public string Description { get; private set; } = string.Empty;
 
+        //Relations
+        private readonly List<Enemy> enemies = new();
+        public IReadOnlyCollection<Enemy> Enemies => enemies.AsReadOnly();
+
+        private Zone() { }
         public Zone(string name, int requiredLevel)
         {
             Name = name;
