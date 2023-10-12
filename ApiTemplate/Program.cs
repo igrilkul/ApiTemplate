@@ -64,6 +64,9 @@ namespace TextualRPG
             // Dependencies
             services.AddScoped<IItemService, ItemService>();
             services.AddScoped<ICharacterService, CharacterService>();
+            services.AddScoped<IZoneService, ZoneService>();
+            services.AddScoped<IEnemyService, EnemyService>();
+
 
             var app = builder.Build();
 

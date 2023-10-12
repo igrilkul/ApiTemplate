@@ -43,37 +43,5 @@ namespace TextualRPG.EF.Services
             return enemy;
         }
 
-        public async Task<Enemy?> RemoveEnemyAsync(int id)
-        {
-            var dbEnemy = await GetEnemyByIdAsync(id);
-
-            if (dbEnemy == null)
-            {
-                return null;
-            }
-
-            context.Enemies.Remove(dbEnemy);
-            await context.SaveChangesAsync();
-
-            return dbEnemy;
-        }
-
-        public async Task<Enemy?> UpdateEnemyAsync(int id, Enemy request)
-        {
-            var dbEnemy = await GetEnemyByIdAsync(id);
-
-            if (dbEnemy == null)
-            {
-                return null;
-            }
-
-            dbEnemy.UpdateEnemy(request.Name, request.Level, request.Description
-                , request.Experience, request.Hp, request.Mp, request.Defense
-                , request.MagicResistance, request.BleedResistance
-                , request.PoisonResistance, request.StunResistance
-                , request.Zone);
-
-            return dbEnemy;
-        }
     }
 }

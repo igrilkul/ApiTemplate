@@ -37,34 +37,6 @@ namespace TextualRPG.API
             return Ok(Enemy);
         }
 
-        [HttpPost]
-        public async Task<ActionResult<Enemy>> AddEnemy(Enemy Enemy)
-            => Ok(await service.AddEnemyAsync(Enemy));
-
-        [HttpPut("{id}")]
-        public async Task<ActionResult<Enemy>> UpdateEnemy(int id, Enemy EnemyRequest)
-        {
-            var Enemy = await service.UpdateEnemyAsync(id, EnemyRequest);
-
-            if (Enemy == null)
-            {
-                return BadRequest("Enemy not found.");
-            }
-
-            return Ok(Enemy);
-        }
-
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
-        {
-            var Enemy = await service.RemoveEnemyAsync(id);
-
-            if (Enemy == null)
-            {
-                return BadRequest("Enemy not found.");
-            }
-
-            return NoContent();
-        }
+       
     }
 }

@@ -11,8 +11,5 @@ namespace TextualRPG.API.Contracts
     {
         public Task<List<Enemy>> GetAllEnemiesAsync();
         public Task<Enemy?> GetEnemyByIdAsync(int id);
-        public Task<Enemy> AddEnemyAsync(Enemy request);
-        public Task<Enemy?> UpdateEnemyAsync(int id, Enemy request);
-        public Task<Enemy?> RemoveEnemyAsync(int id);
     }
 }
