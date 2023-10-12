@@ -39,35 +39,6 @@ namespace TextualRPG.EF.Services
             return zone;
         }
 
-        public async Task<Zone?> RemoveZoneAsync(int id)
-        {
-            var zoneToRemove = await GetZoneByIdAsync(id);
-
-            if (zoneToRemove is null)
-            {
-                return null;
-            }
-
-            context.Zones.Remove(zoneToRemove);
-            await this.context.SaveChangesAsync();
-
-            return zoneToRemove;
-        }
-
-        public async Task<Zone?> UpdateZoneAsync(int id, Zone zoneToUpdate)
-        {
-            var dbZone = await GetZoneByIdAsync(id);
-
-            if (dbZone is null)
-            {
-                return null;
-            }
-
-
-            dbZone.UpdateZone(zoneToUpdate.Name, zoneToUpdate.RequiredLevel, zoneToUpdate.Description);
-            await this.context.SaveChangesAsync();
-
-            return dbZone;
-        }
+ 
     }
 }

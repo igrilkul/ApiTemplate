@@ -34,34 +34,6 @@ namespace TextualRPG.API
             return Ok(item);
         }
 
-        [HttpPost]
-        public async Task<ActionResult<Item>> AddItem(Item item)
-            => Ok(await service.AddItemAsync(item));
-
-        [HttpPut("{id}")]
-        public async Task<ActionResult<Item>> UpdateItem(int id, Item itemRequest)
-        {
-            var item = await service.UpdateItemAsync(id, itemRequest);
-
-            if (item == null)
-            {
-                return BadRequest("Item not found.");
-            }
-
-            return Ok(item);
-        }
-
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
-        {
-            var item = await service.RemoveItemAsync(id);
-
-            if (item == null)
-            {
-                return BadRequest("Item not found.");
-            }
-
-            return NoContent();
-        }
+       
     }
 }

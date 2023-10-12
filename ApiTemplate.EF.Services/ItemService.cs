@@ -21,37 +21,6 @@ namespace TextualRPG.EF.Services
         public async Task<Item?> GetItemByIdAsync(int id)
             => await context.Items.FindAsync(id);
 
-        public async Task<Item> AddItemAsync(Item itemToAdd)
-        {
-            await context.Items.AddAsync(itemToAdd);
-            await context.SaveChangesAsync();
-            return itemToAdd;
-        }
-
-        public async Task<Item?> UpdateItemAsync(int id, Item itemToUpdate)
-        {
-            Item? dbItem = await context.Items.FindAsync(id);
-
-            if (dbItem is null)
-                return null;
-
-            dbItem.UpdateItem(itemToUpdate.Title, itemToUpdate.Description, itemToUpdate.Price, itemToUpdate.Type);
-
-            await context.SaveChangesAsync();
-
-            return dbItem;
-        }
-
-        public async Task<Item?> RemoveItemAsync(int id)
-        {
-            var dbItem = await GetItemByIdAsync(id);
-
-            if (dbItem is null)
-                return null;
-
-            context.Items.Remove(dbItem);
-            await context.SaveChangesAsync();
-            return dbItem;
-        }
+     
     }
 }

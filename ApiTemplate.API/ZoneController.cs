@@ -34,35 +34,6 @@ namespace TextualRPG.API
             return Ok(zone);
         }
 
-        [HttpPost]
-        public async Task<ActionResult<Zone>> AddZone(Zone zone)
-        {
-            return Ok(await service.AddZoneAsync(zone));
-        }
-
-        [HttpPut("{id}")]
-        public async Task<ActionResult<Zone>> UpdateZone(int id, Zone zoneRequest)
-        {
-            var zone = await service.UpdateZoneAsync(id, zoneRequest);
-            if(zone is null)
-            {
-                return NotFound("Zone not found.");
-            }
-
-            return Ok(zone);
-        }
-
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
-        {
-            var zone = await service.RemoveZoneAsync(id);
-
-            if(zone is null)
-            {
-                return NotFound("Zone not found.");
-            }
-
-            return NoContent();
-        }
+       
     }
 }
