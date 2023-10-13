@@ -117,5 +117,32 @@ namespace TextualRPG.EF.Services
 
             return character;
         }
+
+        public async Task<Character?> ObtainItemAsync(int characterId, int itemId)
+        {
+            var character = await context.Characters
+            .Include(c => c.CharacterItems)
+            .FirstOrDefaultAsync(c => c.Id == characterId);
+
+            if (character is null)
+            {
+                return null;
+            }
+
+            var item = await context.Items.FirstOrDefaultAsync(i=>i.Id == itemId);
+
+            if (item is null)
+            {
+                return null;
+            }
+
+            var charItem = new CharacterItem(character, item);
+            character.CharacterItems.Append(charItem);
+            context.Add(charItem);
+
+            context.SaveChanges();
+
+            return character;
+        }
     }
 }

@@ -9,12 +9,22 @@ namespace TextualRPG.DAL.Models
     public class CharacterItem
     {
         public int Id { get;private set; }
-        public Character? Character { get; private set; } = null!;
-        public Item? Item { get; private set; } = null!;
+        public Character Character { get; private set; }
+        public Item Item { get; private set; }
+        public int EnhancementLevel { get; private set; } = 0;
+        public int CurrentDurability { get; private set; } = 100;
 
-        public int EnhancementLevel { get; private set; }
-        public int SaleValue { get; private set; }
-        public int CurrentDurability { get; private set; }
+        private CharacterItem() { }
+
+        public CharacterItem(Character character, Item item)
+        {
+            Character = character;
+            Item = item;
+            EnhancementLevel = 0;
+            CurrentDurability = 100;
+        }
+
+
 
         public void RepairItem()
         {
@@ -24,6 +34,7 @@ namespace TextualRPG.DAL.Models
         {
             EnhancementLevel += 1;
         }
+
 
     }
 }

@@ -22,10 +22,10 @@ namespace TextualRPG.API
             return Ok(await service.GetAllCharactersAsync());
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<List<Character>>> Get(int id)
+        [HttpPost("obtain-item/character/{characterId}/item/{itemId}")]
+        public async Task<ActionResult<List<Character>>> Get(int characterId, int itemId)
         {
-            var character = await service.GetCharacterByIdAsync(id);
+            var character = await service.ObtainItemAsync(characterId, itemId);
 
             if(character == null)
             {
@@ -53,6 +53,8 @@ namespace TextualRPG.API
 
             return Ok(character);
         }
+
+      
 
         [HttpPatch("{id}")]
         public async Task<ActionResult<Character>> LevelUpCharacter(int id, int levels)
