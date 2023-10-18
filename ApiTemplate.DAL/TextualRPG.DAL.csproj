@@ -16,4 +16,8 @@
     <Folder Include="Migrations\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TextualRPG.DAL.Contracts\TextualRPG.DAL.Contracts.csproj" />
+  </ItemGroup>
+
 </Project>
